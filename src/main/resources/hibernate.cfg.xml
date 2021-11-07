@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:sqlite:cumle_benzerligi.db</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
+        
+        <property name="hbm2ddl.auto">create</property>
+        <mapping class="cumle_benzerligi.entity.Kiyas"/>
+        <!-- Bu alan önemli -->
+        <!-- DB schema will be updated if needed
+            <property name="hbm2ddl.auto">update</property> 
+        -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
